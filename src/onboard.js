@@ -19,6 +19,7 @@
         init: function(steps) {
             // Create the wrapper
             var that = this,
+                animationSpeed = 150,
                 stepsCount = steps.length,
                 $body = $('body'),
                 $wrapper = $('<div/>', {
@@ -32,7 +33,7 @@
                 }),
                 $close = $('<div/>', {
                     class: 'onboard--close',
-                    html: '<a rel="onboard-trigger">Instructions</a>'
+                    html: '<a rel="onboard--trigger">Instructions</a>'
                 }),
                 $prev = $('<div/>', {
                     class: 'onboard--controls onboard--controls--prev',
@@ -73,13 +74,13 @@
                     $nextStep = $wrapper.find('.onboard--step').eq((curStep + direction) % stepsCount);                
 
                 // Hide the current step, show the next or prev one
-                $curStep.fadeOut(300, function() {
-                    $nextStep.fadeIn(300);
+                $curStep.stop().fadeOut(animationSpeed, function() {
+                    $nextStep.stop().fadeIn(animationSpeed);
                     that.currentStep += direction;
                 });
             });
             // Any trigger would toggle the onboarding
-            $(document).on('click', '[rel*=onboard-trigger]', function(evt) {
+            $(document).on('click', '[rel*=onboard--trigger]', function(evt) {
                 evt.stopPropagation();
                 that.toggle();
                 evt.preventDefault();
