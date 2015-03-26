@@ -9,7 +9,7 @@
   transition: bottom 0.3s ease-in-out;
   font-family: "Helvetica Neue", "HelveticaNeue-Light", "Helvetica Neue Light", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 200;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
 }
 
 .onboard--wrapper.shown {
@@ -27,7 +27,7 @@
 .onboard--close > a {
 	display: block;
 	font-weight: 500;
-	background-color: #EF6300;
+	background-color: #BFBFBF;
 	color: #fff;
 	padding: 0 15px;
 	height: 40px;
@@ -39,7 +39,7 @@
 }
 
 .onboard--close > a:hover {
-	background-color: #F39553;
+	background-color: #EF6300;
 }
 
 
@@ -68,6 +68,11 @@
 	width: 80%;
 	max-width: 700px;
 	margin-bottom: 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	background-color: #fff;
+	padding: 10px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.15);
 }
 
 .onboard--step--caption {

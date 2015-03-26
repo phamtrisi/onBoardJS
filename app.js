@@ -1,19 +1,19 @@
 $(function() {
 	onBoard.init([
     {
-      mediaUrl: '/static/images/step1.png',
-      caption: 'You can make edits to your headcount by selecting <b>Edit details</b> from the dropdown list on the right hand side.'
+      mediaUrl: 'images/step1.png',
+      caption: 'Sign in with your username and password to use our service.'
     },
     {
-      mediaUrl: '/static/images/step2.png',
+      mediaUrl: 'images/step2.png',
       caption: 'Click on the green check button to save your changes.'
     },
     {
-      mediaUrl: '/static/images/step1.gif',
+      mediaUrl: 'images/step3.png',
       caption: 'You have to do all 3 steps, to get to step 4'
     },
     {
-      mediaUrl: '/static/images/step1.gif',
+      mediaUrl: 'images/step2.png',
       caption: 'And this is where step 4 is'
     }
   ]);
