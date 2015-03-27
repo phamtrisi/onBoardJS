@@ -16,5 +16,7 @@ $(function() {
       mediaUrl: 'images/step2.png',
       caption: 'Just another thing you have to do before you finish this guide'
     }
-  ]);
+  ], {
+    helpText: 'instructions'
+  });
 });

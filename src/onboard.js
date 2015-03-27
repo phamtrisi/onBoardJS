@@ -1,4 +1,4 @@
-(function(global) {
+(function(global, $) {
     if (typeof global.onBoard === 'function') return;
 
     var version = '0.0.1';
@@ -16,11 +16,15 @@
         toggle: function() {
             this.element.toggleClass('shown');
         },
-        init: function(steps) {
+        defaults: {
+            helpText: 'Tips'    
+        },
+        init: function(steps, options) {
             // Create the wrapper
             var that = this,
                 animationSpeed = 150,
                 stepsCount = steps.length,
+                settings = $.extend({}, this.defaults, options),
                 $body = $('body'),
                 $wrapper = $('<div/>', {
                     class: 'onboard--wrapper'
@@ -33,7 +37,7 @@
                 }),
                 $close = $('<div/>', {
                     class: 'onboard--close',
-                    html: '<a rel="onboard--trigger">Instructions</a>'
+                    html: '<a rel="onboard--trigger">' + settings.helpText + '</a>'
                 }),
                 $prev = $('<div/>', {
                     class: 'onboard--controls onboard--controls--prev',
@@ -89,6 +93,7 @@
             $body.append($wrapper.append($close).append($inner.append($prev).append($next).append($steps)));
             // Save a pointer to the element
             that.element = $wrapper;
+            
             return that;
         },
         currentStep: 0,
@@ -96,4 +101,4 @@
     };
 
     global.onBoard = onBoard;
-})(this);
+})(this, jQuery);
